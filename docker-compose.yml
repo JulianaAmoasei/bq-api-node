@@ -3,7 +3,7 @@ version: '3.4'
 services:
   dev:
     image: node:12-alpine
-    container_name: bq-api-node
+    container_name: bq-api-node-1
     command:  npm run dev
     working_dir: /app
     ports:
@@ -17,7 +17,7 @@ services:
 
   db:
     image: postgres
-    container_name: bq-api-node_db
+    container_name: bq-api-node_db-1
     ports:
       - "5432:5432"
     volumes:
