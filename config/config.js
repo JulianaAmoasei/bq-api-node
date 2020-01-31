@@ -1,4 +1,6 @@
-{
+require('dotenv').config();
+
+module.exports = {
   "development": {
     "username": "postgres",
     "password": null,
@@ -16,10 +18,10 @@
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "bq-database_production",
-    "host": "127.0.0.1",
+    "username": DB_USER,
+    "password": DB_PASS,
+    "database": DB_DATABASE,
+    "host": DB_HOST,
     "dialect": "postgres",
     "operatorsAliases": false
   }
