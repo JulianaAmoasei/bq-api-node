@@ -1,8 +1,10 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
-// import { DatabaseError } from 'sequelize/types';
 import productRoutes from './routes/productRoutes';
+import ordersRoutes from './routes/ordersRoutes';
+import orderItemsRoutes from './routes/orderItemsRoutes';
+// import tableRoutes from './routes/tableRoutes';
 
 const app = express();
 
@@ -14,6 +16,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const port = process.env.PORT || 3000;
 
 app.use('/api/products', productRoutes);
+app.use('/api/orderitems', orderItemsRoutes);
+app.use('/api/orders', ordersRoutes);
+// app.use('/api/tables', tableRoutes);
 
 // when a random route is inputed
 app.get('*', (req, res) => res.status(200).send({

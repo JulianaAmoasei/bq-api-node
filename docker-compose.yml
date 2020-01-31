@@ -3,8 +3,8 @@ version: '3.4'
 services:
   dev:
     image: node:12-alpine
-    container_name: bq-api-node-1
-    command:  npm run dev
+    container_name: bq-api-node
+    command:  sh -c "npx sequelize-cli db:migrate && npm run dev"
     working_dir: /app
     ports:
       - "3000:3000"
@@ -17,7 +17,7 @@ services:
 
   db:
     image: postgres
-    container_name: bq-api-node_db-1
+    container_name: bq-api-node_db
     ports:
       - "5432:5432"
     volumes:

@@ -2,10 +2,10 @@
 module.exports = (sequelize, DataTypes) => {
   const products = sequelize.define('products', {
     name: DataTypes.STRING,
-    price: DataTypes.DECIMAL
+    price: DataTypes.DECIMAL(10,2)
   }, {});
   products.associate = function(models) {
-    // associations can be defined here
+    products.hasMany(models.orderitems)
   };
   return products;
 };
