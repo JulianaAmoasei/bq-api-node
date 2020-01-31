@@ -5,7 +5,6 @@ import productRoutes from './routes/productRoutes';
 import ordersRoutes from './routes/ordersRoutes';
 import orderItemsRoutes from './routes/orderItemsRoutes';
 // import tableRoutes from './routes/tableRoutes';
-require('dotenv').config()
 
 const app = express();
 

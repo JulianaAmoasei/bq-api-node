@@ -18,11 +18,14 @@ module.exports = {
     "operatorsAliases": false
   },
   "production": {
-    "username": DB_USER,
-    "password": DB_PASS,
-    "database": DB_DATABASE,
-    "host": DB_HOST,
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_DATABASE,
+    "host": process.env.DB_HOST,
     "dialect": "postgres",
-    "operatorsAliases": false
+    "operatorsAliases": false,
+    "dialectOptions": {
+      "ssl": true
+    }
   }
 }
